@@ -1,0 +1,69 @@
+.bang {
+  width: 900px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-top: 190px;
+}
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.profile .trai {
+  display: flex;
+  width: 280px;
+  height: 100px;
+  background: #7ca877;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px gray;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 20px;
+}
+.profile .trai img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.profile .trai .traiFr {
+  padding-left: 10px;
+}
+.profile .phai {
+  padding-top: 10px;
+  width: 600px;
+  padding-bottom: 10px;
+  background: #7ca877;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px gray;
+  padding: 10px;
+}
+.profile .phai  h3{
+  padding-bottom: 10px;
+}
+.profile .phai input{
+  width: 400px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  color: white;
+  background: none;
+  border: 2px solid lightgray;
+  outline: none;
+}
+.profile .phai form{
+  display: flex;
+}
+.profile .phai form .trai{
+    display: block;
+    box-shadow: none;
+    width: 150px;
+}
+.profile .phai form .phai{
+  box-shadow: none;
+}
+.profile .phai form .trai p{
+  height: 65px;
+}

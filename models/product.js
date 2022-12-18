@@ -1,5 +1,11 @@
 var db = require("./database");
 
+exports.search = function (search,callback) {
+  let sql = "SELECT * FROM products WHERE tensp LIKE '%' ? '%'";
+  db.query(sql, search, function (err, d) {
+    callback(err,d);
+  });
+};
 exports.list = function (callback) {
   let sql = "SELECT * FROM products ORDER BY RAND()  LIMIT 12";
   db.query(sql, function (err, d) {

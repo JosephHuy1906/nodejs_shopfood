@@ -19,6 +19,7 @@
     <script src="/js/index.js"></script>
     <script src="/js/kiemtra.js"></script>
   </head>
+
   <body>
     <div class="wapper">
       <header>
@@ -67,12 +68,11 @@
             </ul>
           </nav>
         </div>
-        
       </header>
 
       <div class="main">
         <div class="login">
-          <form action="login_submit.php" method="post">
+          <form action="/apiuser/login/submit" method="post">
             <h2>ĐĂNG NHẬP</h2>
             <br />
             <input type="text" name="username" placeholder="User Name" /><br />
@@ -81,7 +81,8 @@
               name="password"
               placeholder="Password"
             /><br />
-            <button type="submit" name="login" class="dangnhapFr">Login</button>
+            <a href="/fogetPass">Quên Mật Khẩu?</a>
+            <input type="submit" value="Login">
 
             <div class="phuongthuc">
               <a href="">
@@ -171,5 +172,4 @@
     </div>
   </body>
 </html>
-<script src="./js/kiemtra.js"></script>
 <script type="text/javascript" src="/js/cart.js"></script>

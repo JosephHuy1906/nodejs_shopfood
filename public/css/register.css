@@ -15,7 +15,6 @@ header{
     margin: auto;
     display: flex;
     border: none;
-   
 }
 
 h2 {
@@ -68,7 +67,8 @@ hr {
     height: 40px;
     margin-bottom: 20px;
     background: none;
-    border: 1px solid #d3d0d0;
+    border: 2px solid green;
+    color: green;
     padding-left: 10px;
     outline: none;
     cursor: pointer;
@@ -111,12 +111,13 @@ hr {
     width: 350px;
     padding-left: 10px;
     background: #4285f4;
+    height: 450px;
 }
 
 .other h2{
     color: white;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 130px;
 }
 .other h3,p {
     color: white;

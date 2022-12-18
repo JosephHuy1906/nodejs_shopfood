@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nam An Market</title>
   <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/login.css" />
   <link rel="stylesheet" href="/fontawesome-free-5.15.4-web/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="/js/index.js"></script>
+  <script src="/js/kiemtra.js"></script>
 </head>
 
 <body>
@@ -21,14 +23,12 @@
           <a href="/"><img src="/images/logoFooter-removebg-preview.png" alt="" /></a>
         </div>
         <div class="seachbox">
-          <form action="/apiproduct/search_" method="post">
+          <form action="">
             <div class="seach">
-              <input type="search" name="search"
-                placeholder="Tìm Kiếm sản phẩm, thương hiệu hay nhãn hàng bạn muốn..." />
+              <input type="search" placeholder="Tìm Kiếm sản phẩm, thương hiệu hay nhãn hàng bạn muốn..." />
             </div>
-          
-          <span><button type="submit"><i class="fas fa-search"></i></button></span>
           </form>
+          <span><button><i class="fas fa-search"></i></button></span>
         </div>
         <div class="cart">
           <span class="demSP"></span>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="dangnhap">
-
+          <a href="/login"> <i class="fas fa-user-circle"></i> </a>
         </div>
       </div>
       <div class="header_menu">
@@ -57,99 +57,24 @@
         </nav>
       </div>
     </header>
-    <div class="container">
-      <div class="container_img">
-        <div id="slideshow">
-          <div class="slide-wrapper">
-            <div class="slide"><img src="/images/banner.jpg" /></div>
-            <div class="slide"><img src="/images/banner1.png" /></div>
-          </div>
-        </div>
-        <div class="img">
-          <img src="/images/banner-right-2.png" alt="" />
-          <img src="/images/banner-right-5.png" alt="" />
-          <img src="/images/banner-right-10.png" alt="" />
-        </div>
+
+    <div class="main">
+      <div class="login">
+        <form action="/apiuser/fogetpassnew" method="post">
+          <h2>Đổi Mật Khẩu</h2>
+          <br />
+          <input type="text" name="code" placeholder="Nhập mã code" /><br />
+          <span class="errus"></span><br>
+          <input type="password" name="password" placeholder="Nhập mật khẩu mới" /><br />
+          <input type="password" name="repassword" placeholder="Nhập lại mật khẩu mới" /><br />
+          <span class="errus1"></span><br>
+          <input type="submit" value="Xác nhận">
+
+        </form>
+
       </div>
     </div>
 
-    <div class="hot">
-      <div class="title">
-        <h2>Sản phẩm hot</h2>
-        <hr />
-      </div>
-      <div class="sanphamhot sphot"></div>
-    </div>
-
-    <div class="New">
-      <div class="title">
-        <h2>Sản phẩm new</h2>
-        <hr />
-      </div>
-      <div class="sanphamhot spnew"></div>
-    </div>
-
-    <div class="seenMax">
-      <div class="title">
-        <h2>Sản phẩm xem nhiều nhất</h2>
-        <hr />
-      </div>
-      <div class="sanphamhot spview"></div>
-    </div>
-    <div class="indexTinKhuyenMai">
-      <div class="title">
-        <h2>TIN TỨC KHUYẾN MÃI</h2>
-        <hr />
-      </div>
-      <div class="khuyenmai">
-        <div class="khuyenmai1">
-          <div class="anh">
-            <a href=""><img src="./images/chm-to-roi_d4e77d5976404207af44ca25c291a2c2_master.png" alt="" /></a>
-          </div>
-          <div class="info">
-            <a href="">
-              <p>
-                NAM AN MARKET KHAI TRƯƠNG THỬ NGHIỆM CỬA HÀNG MỚI TẠI QUẬN 7
-                <br />
-                <i class="fas fa-calendar-alt"></i> NGÀY 20/12/2021 |
-              </p>
-            </a>
-            <button>XEM THÊM >></button>
-          </div>
-        </div>
-        <div class="khuyenmai2">
-          <div class="anh">
-            <a href=""><img src="./images/social-media_2_907b695133d44e99962422e039456759_master_1.png" alt="" /></a>
-          </div>
-          <div class="info">
-            <a href="">
-              <p>
-                Thưởng thức hương vị hảo hạng từ Australia tại Nam An
-                Market<br />
-                <i class="fas fa-calendar-alt"></i> NGÀY 2/1/2022 |
-              </p>
-            </a>
-            <button>XEM THÊM >></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="indexShip">
-      <form action="" onsubmit="return KiemTra()">
-        <label for="">Liên hệ với chúng tôi</label><br /><br />
-        <input type="text" placeholder="Nhập họ và tên" id="name" /><br />
-        <div id="loi1"></div>
-        <br />
-        <input type="tel" id="phone" placeholder="Nhập số điện thoại" /><br />
-        <div id="loi2"></div>
-        <br />
-        <textarea name="text" cols="46" rows="5" id="note" maxlength="200"></textarea><br />
-        <div id="loi3"></div>
-        <br />
-        <button onclick="kiemtra();">Gửi</button>
-      </form>
-    </div>
     <footer>
       <div class="phanhoi">
         <form action="">
@@ -159,7 +84,7 @@
       </div>
       <div class="foter">
         <div class="logo">
-          <img src="./images/logoFooter-removebg-preview.png" alt="" /><br />
+          <img src="/images/logoFooter-removebg-preview.png" alt="" /><br />
           <i class="fas fa-phone-alt"></i> 0961022334 <br />
           <i class="fas fa-envelope"></i> namanmarket@gmail <br />
           <div class="lienhevstoi">
@@ -215,23 +140,16 @@
 </body>
 
 </html>
-<script src="./js/kiemtra.js"></script>
-<script type="text/javascript" src="/js/json/showProIndex.js"></script>
 <script type="text/javascript" src="/js/cart.js"></script>
+
 <script>
-  if (`<%= us %>`) {
-    if (`<%= avata %>`) {
-      document.querySelector(".dangnhap").innerHTML = `
-      <a href="/login"> <img src="/images/<%= avata %>"/> </a>
-      <a href="/apiuser/thoat" class="logout">Đăng xuất</a>
-      `
-    } else {
-      document.querySelector(".dangnhap").innerHTML = `
-      <a href="/login"> <i class="fas fa-user-circle"></i> </a>
-      <a href="/apiuser/thoat" class="logout">Đăng xuất</a>
-      `
-    }
-  } else {
-    document.querySelector(".dangnhap").innerHTML = `<a href="/login"> <i class="fas fa-user-circle"></i> </a>`
+  if(`<%= er1 %>`){
+    document.querySelector('.errus').innerHTML= "Mã code nhập lại không đúng"
+  } if(`<%= er2 %>`){
+    document.querySelector('.errus1').innerHTML= "Mật Khẩu nhập lại không đúng"
+  }else{
+    document.querySelector('.errus').innerHTML=""
+    document.querySelector('.errus1').innerHTML=""
+    
   }
 </script>

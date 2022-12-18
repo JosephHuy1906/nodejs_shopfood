@@ -4,6 +4,9 @@
   margin: auto;
   margin-top: 190px;
 }
+.container {
+  margin-top: -10px;
+}
 .profile {
   display: flex;
   flex-wrap: wrap;
@@ -40,10 +43,40 @@
   box-shadow: 0 0 15px gray;
   padding: 10px;
 }
-.profile .phai  h3{
+.profile .phai h3 {
   padding-bottom: 10px;
 }
-.profile .phai input{
+.updateUser {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+.updateUser button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background: orchid;
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 50px;
+}
+.updateUser button:hover {
+  cursor: pointer;
+  background: orangered;
+  box-shadow: 0 0 5px white;
+}
+.updateUser a {
+  padding: 10px;
+  background: orangered;
+  color: white;
+  font-size: 1.2rem;
+}
+.updateUser a:hover {
+  cursor: pointer;
+  background: orchid;
+  box-shadow: 0 0 5px white;
+}
+.profile .phai input {
   width: 400px;
   height: 40px;
   margin-bottom: 20px;
@@ -53,17 +86,23 @@
   border: 2px solid lightgray;
   outline: none;
 }
-.profile .phai form{
+.profile .phai .formsubmit {
   display: flex;
 }
-.profile .phai form .trai{
-    display: block;
-    box-shadow: none;
-    width: 150px;
+a{
+  text-decoration: none;
 }
-.profile .phai form .phai{
+.profile .phai .formFile{
+ border: none;
+}
+.profile .phai .formsubmit .trai {
+  display: block;
+  box-shadow: none;
+  width: 150px;
+}
+.profile .phai .formsubmit .phai {
   box-shadow: none;
 }
-.profile .phai form .trai p{
+.profile .phai .formsubmit .trai p {
   height: 65px;
 }

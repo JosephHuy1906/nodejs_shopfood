@@ -18,6 +18,7 @@
     ></script>
     <script src="./js/index.js"></script>
   </head>
+
   <body>
     <div class="wapper">
       <header>
@@ -50,7 +51,9 @@
             <p>Hotline: 0961022334</p>
           </div>
 
-          <div class="dangnhap"></div>
+          <div class="dangnhap">
+            <script src="/js/json/showAvata.js"></script>
+          </div>
         </div>
         <div class="header_menu">
           <div id="toggle"><i class="fas fa-bars"></i></div>
@@ -84,7 +87,7 @@
         <ul>
           <li><a href="/">TRANG CHỦ /</a></li>
           <li><a href="/product">SẢN PHẨM /</a></li>
-          <li><a href=""> </a></li>
+          <li><a href="">Sản Phẩm Hot</a></li>
         </ul>
       </div>
       <div class="main">
@@ -95,7 +98,7 @@
         </aside>
         <main>
           <div class="tieudetrang">
-            <h3 class="nameCat"></h3>
+            <h3>SẢN PHẨM HOT</h3>
             <div class="menutieudetrang">
               <ul>
                 <li>
@@ -111,7 +114,9 @@
               <br />
             </div>
           </div>
-          <div class="sanphamtraicay"></div>
+          <div class="sanphamtraicay">
+            <%= list %>
+          </div>
         </main>
       </div>
     </div>
@@ -180,64 +185,8 @@
     </footer>
   </body>
 </html>
-<script>
-  let url = "http://localhost:3000/apiproduct/cat/<%= id %>";
-  console.log(url);
-  fetch(url)
-    .then(function (res) {
-      console.log(res); //xem thử trong console của trình duyệt nhé
-      if (!res.ok) {
-        throw new Error("Lỗi = " + res.status);
-      }
-      return res.json();
-    })
-    .then(function (data) {
-      data.forEach((el) => {
-        const pro = `
-            <div class="traicay1">
-              <a href="/product/detail/${el.id}">
-              <img src="/images/${el.hinh}" alt="" />
-              <h4>${el.tensp}</h4>
-              <p>${el.gia}</p>
-            </a>
-              <div class="thongtinqua">
-                <p>Xuất xứ: <b>${el.xuatxu}</b></p>
-                <p>Quy cách đóng gói: <b>${el.quycach}</b></p>
-                <button onclick="addCart(${el.id}, '${el.tensp}', ${el.gia}, '${el.hinh}')">
-                  <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-                </button>
-              </div>
-            </div>
-          `;
-        document.querySelector(".sanphamtraicay").innerHTML += pro;
-      });
-    })
-    .catch(function (error) {
-      console.log("Lỗi: ", error);
-    });
-  const urlcate = "http://localhost:3000/apicategory/cat/<%= id %>";
-  fetch(urlcate)
-    .then((res) => res.json())
-    .then((data) => {
-      document.querySelector(".nameCat").innerHTML = data.tendanhmuc;
-    });
-
-  function addCart(id, tensp, gia, hinh) {
-    var cart = JSON.parse(localStorage.getItem("cart"));
-    if (cart == null) {
-      cart = [];
-      cart.push({ id: id, name: tensp, price: gia, image: hinh, quatity: 1 });
-    } else {
-      let item = cart.find((item) => item.id === id);
-      if (item) item.quatity++;
-      else
-        cart.push({ id: id, name: tensp, price: gia, image: hinh, quatity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    location.reload();
-  }
-</script>
-<script src="/js/json/showCategory.js"></script>
+<script type="text/javascript" src="/js/json/search.js"></script>
+<script type="text/javascript" src="/js/json/showCategory.js"></script>
 <script type="text/javascript" src="/js/cart.js"></script>
 <script>
   if (`<%= us %>`) {

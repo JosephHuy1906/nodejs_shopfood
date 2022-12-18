@@ -50,7 +50,7 @@
           </div>
 
           <div class="dangnhap">
-            <a href="/login"> <i class="fas fa-user-circle"></i> </a>
+
           </div>
         </div>
         <div class="header_menu">
@@ -397,3 +397,20 @@
 </html>
 <script src="./js/kiemtra.js"></script>
 <script type="text/javascript" src="/js/cart.js"></script>
+<script>
+  if(`<%= us %>`){
+    if(`<%= avata %>`){
+      document.querySelector(".dangnhap").innerHTML = `
+      <a href="/login"> <img src="/images/<%= avata %>"/> </a>
+      <a href="/apiuser/thoat" class="logout">Đăng xuất</a>
+      `
+    }else{
+      document.querySelector(".dangnhap").innerHTML = `
+      <a href="/login"> <i class="fas fa-user-circle"></i> </a>
+      <a href="/apiuser/thoat" class="logout">Đăng xuất</a>
+      `
+    }
+  }else{
+    document.querySelector(".dangnhap").innerHTML = `<a href="/login"> <i class="fas fa-user-circle"></i> </a>`
+  }
+</script>

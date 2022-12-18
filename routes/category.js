@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   let data = req.body;
   modelsProduct.create(data, function () {
-    res.json({ thongbao: "Đã thêm  xong một user mới" });
+    res.json({ thongbao: "Đã thêm xong một danh mục mới" });
   });
 });
 router.get("/cat/:id", (req, res) => {

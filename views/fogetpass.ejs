@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nam An Market</title>
   <link rel="stylesheet" href="/css/index.css" />
-  <link rel="stylesheet" href="/css/thongtinn.css" />
+  <link rel="stylesheet" href="/css/login.css" />
   <link rel="stylesheet" href="/fontawesome-free-5.15.4-web/css/all.min.css" />
-  
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="/js/index.js"></script>
+  <script src="/js/kiemtra.js"></script>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="dangnhap">
-
+          <a href="/login"> <i class="fas fa-user-circle"></i> </a>
         </div>
       </div>
       <div class="header_menu">
@@ -56,15 +56,22 @@
           </ul>
         </nav>
       </div>
-
     </header>
 
-    <div class="container">
+    <div class="main">
+      <div class="login">
+        <form action="/apiuser/login/foget" method="post">
+          <h2>Quên Mật Khẩu</h2>
+          <br />
+          <input type="email" name="email" placeholder="Email" /><br />
+        
+          <input type="submit" value="Xác nhận">
 
+        </form>
+
+      </div>
     </div>
 
-
-    <div class="indexShip"></div>
     <footer>
       <div class="phanhoi">
         <form action="">
@@ -100,6 +107,7 @@
             <p>CẨM NANG SỐNG KHỎE</p>
             <p>CÔNG THỨC NẤU ĂN</p>
           </div>
+
           <div class="giomocua">
             <h3>GIỜ MỞ CỬA</h3>
             <p>
@@ -130,22 +138,3 @@
 
 </html>
 <script type="text/javascript" src="/js/cart.js"></script>
-<script type="text/javascript" src="/js/json/showFrofile.js"></script>
-
-<script>
-  if(`<%= us %>`){
-    if(`<%= avata %>`){
-      document.querySelector(".dangnhap").innerHTML = `
-      <a href="/login"> <img src="/images/<%= avata %>"/> </a>
-      <a href="/apiuser/thoat" class="logout">Đăng xuất</a>
-      `
-    }else{
-      document.querySelector(".dangnhap").innerHTML = `
-      <a href="/login"> <i class="fas fa-user-circle"></i> </a>
-      <a href="/apiuser/thoat" class="logout">Đăng xuất</a>
-      `
-    }
-  }else{
-    document.querySelector(".dangnhap").innerHTML = `<a href="/login"> <i class="fas fa-user-circle"></i> </a>`
-  }
-</script>

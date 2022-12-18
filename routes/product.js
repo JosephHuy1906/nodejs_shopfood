@@ -48,4 +48,10 @@ router.get("/view", (req, res) => {
     res.json(list);
   });
 });
+router.post('/search_', (req, res) => {
+  const search = req.body.search;
+  modelsProduct.search(search, function (err,list) {
+    res.json(list)
+  })
+})
 module.exports = router;

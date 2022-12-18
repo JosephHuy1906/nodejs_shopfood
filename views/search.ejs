@@ -18,7 +18,6 @@
     ></script>
     <script src="./js/index.js"></script>
   </head>
-
   <body>
     <div class="wapper">
       <header>
@@ -51,9 +50,7 @@
             <p>Hotline: 0961022334</p>
           </div>
 
-          <div class="dangnhap">
-            <script src="/js/json/showAvata.js"></script>
-          </div>
+          <div class="dangnhap"></div>
         </div>
         <div class="header_menu">
           <div id="toggle"><i class="fas fa-bars"></i></div>
@@ -87,7 +84,7 @@
         <ul>
           <li><a href="/">TRANG CHỦ /</a></li>
           <li><a href="/product">SẢN PHẨM /</a></li>
-          <li><a href="">Sản Phẩm Hot</a></li>
+          <li><a href=""> </a></li>
         </ul>
       </div>
       <div class="main">
@@ -98,7 +95,7 @@
         </aside>
         <main>
           <div class="tieudetrang">
-            <h3>SẢN PHẨM HOT</h3>
+            <h3 class="nameCat"></h3>
             <div class="menutieudetrang">
               <ul>
                 <li>
@@ -114,9 +111,7 @@
               <br />
             </div>
           </div>
-          <div class="sanphamtraicay">
-            <%= list %>
-          </div>
+          <div class="sanphamtraicay"></div>
         </main>
       </div>
     </div>
@@ -185,8 +180,8 @@
     </footer>
   </body>
 </html>
-<script type="text/javascript" src="/js/json/search.js"></script>
-<script type="text/javascript" src="/js/json/showCategory.js"></script>
+<script src="/js/json/showCategory.js"></script>
+<script src="/js/json/showProSearch.js"></script>
 <script type="text/javascript" src="/js/cart.js"></script>
 <script>
   if (`<%= us %>`) {

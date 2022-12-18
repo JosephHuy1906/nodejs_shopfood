@@ -48,10 +48,13 @@ router.get("/view", (req, res) => {
     res.json(list);
   });
 });
-router.post('/search_', (req, res) => {
-  const search = req.body.search;
+
+router.post('/search', (req, res) => {
+  const search =  req.body.title;
   modelsProduct.search(search, function (err,list) {
+    if(err) throw err;
     res.json(list)
   })
 })
+
 module.exports = router;

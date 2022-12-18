@@ -15,6 +15,7 @@ router.get("/product/", (req, res) => {
 router.get("/profile", (req, res) => {
   res.render("profile", { avata: req.session.avata, us: req.session.username });
 });
+
 router.get("/apiuser/repass", (req, res) => {
   if (req.session.username) {
     res.render("repassword");
@@ -51,6 +52,9 @@ router.get("/about", function (req, res, next) {
 });
 router.get("/register", function (req, res, next) {
   res.render("register");
+});
+router.post("/apiproduct/search", function (req, res, next) {
+  res.render("search", { avata: req.session.avata, us: req.session.username });
 });
 router.get("/cart", function (req, res, next) {
   res.render("cart", { avata: req.session.avata, us: req.session.username });
